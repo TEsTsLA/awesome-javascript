@@ -26,3 +26,10 @@ PubkeyAuthentication yes
 ## 连接
 使用默认的ssh秘钥对连接：ssh username@host -p port
 指定秘钥对的ssh连接 ： ssh -i parivate-rsa-path username@host -p port
+
+## 拷贝ssh公钥到 authorized_keys 后仍然无法免密登录的原因记录
+修改修改.ssh目录的权限以及authorized_keys 的权限(这个必须修改，要不然还是需要密码)
+ 
+sudo chmod 644 ~/.ssh/authorized_keys
+ 
+sudo chmod 700 ~/.ssh
